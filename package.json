@@ -1,0 +1,31 @@
+{
+  "name": "licensing",
+  "version": "0.0.0",
+  "description": "Discover the license footprint of your application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3rd-Eden/licensing"
+  },
+  "keywords": [
+    "license",
+    "licensing",
+    "licenses"
+  ],
+  "author": "Arnout Kazemier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3rd-Eden/licensing/issues"
+  },
+  "bin": {
+    "licensing": "index.js"
+  },
+  "homepage": "https://github.com/3rd-Eden/licensing",
+  "dependencies": {
+    "shrinkwrap": "0.1.x",
+    "argh": "0.1.x"
+  }
+}
