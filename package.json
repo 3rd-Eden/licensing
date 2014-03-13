@@ -1,6 +1,6 @@
 {
   "name": "licensing",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Discover the license footprint of your application",
   "main": "index.js",
   "scripts": {
@@ -27,6 +27,6 @@
   "dependencies": {
     "shrinkwrap": "0.1.x",
     "argh": "0.1.x",
-    "licenses": "0.0.12"
+    "licenses": "0.0.x"
   }
 }
