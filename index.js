@@ -52,7 +52,7 @@ if (argh.name) licenses(argh.name, function (err, licenses) {
     return process.exit(1);
   }
 
-  console.log(argh.name, 'is licensed as:', licenses.join(','));
+  console.log(argh.name, 'is licensed as:', (licenses || []).join(','));
   console.log('');
 
   shrinkwrap.get(argh.name, next);
