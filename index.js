@@ -2,6 +2,7 @@
 'use strict';
 
 var Shrinkwrap = require('shrinkwrap')
+  , licenses = require('licenses')
   , argh = require('argh').argv
   , path = require('path')
   , fs = require('fs');
@@ -40,15 +41,7 @@ console.log('');
 console.log('Resolving dependencies, this might take a while');
 console.log('');
 
-if (argh.name) shrinkwrap.get(argh.name, next);
-else shrinkwrap.resolve(require(argh.package), next);
-
-/**
- * Output the results.
- *
- * @param {Error}
- */
-function next(err, dependencies, dependend) {
+if (argh.name) licenses(argh.name, function (err, licenses) {
   if (err) {
     console.log('');
     console.log('Failed to correctly resolve the licensing information');
@@ -59,8 +52,28 @@ function next(err, dependencies, dependend) {
     return process.exit(1);
   }
 
-
+  console.log(argh.name, 'is licensed as:', licenses.join(','));
   console.log('');
+
+  shrinkwrap.get(argh.name, next);
+}); else shrinkwrap.resolve(require(argh.package), next);
+
+/**
+ * Output the results.
+ *
+ * @param {Error}
+ */
+function next(err, dependencies, dependend) {
+  if (err) {
+    console.log('Failed to correctly resolve the licensing information');
+    console.log('Received the following error:');
+    console.log('');
+    console.log('  ', err.message);
+    console.log('');
+    return process.exit(1);
+  }
+
+
   console.log('Licenses information:');
   console.log('');
 
