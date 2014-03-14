@@ -95,7 +95,7 @@ function next(err, dependencies, dependend) {
   console.log('Found a module that is incorrectly or not detected at all but does');
   console.log('have a valid license? Please report this at:');
   console.log('');
-  console.log('https://github.com/3rd-Eden/licenses/issues/new');
+  console.log('https://github.com/3rd-Eden/licensing/issues/new');
   console.log('');
   console.log('So we can improve the parsing algorithm and yield better results.');
   console.log('');
