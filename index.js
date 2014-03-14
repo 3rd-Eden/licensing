@@ -97,6 +97,8 @@ function next(err, dependencies, dependend) {
   console.log('');
   console.log('https://github.com/3rd-Eden/licenses/issues/new');
   console.log('');
-  console.log('So we can improve the parsing algorithm and yield better results.');
+  console.log('Which is the library that does the actual parsing and detection of');
+  console.log('the license so we can improve it\'s parsing algorithm and yield');
+  console.log('better results.');
   console.log('');
 }
