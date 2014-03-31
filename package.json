@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/3rd-Eden/licensing",
   "dependencies": {
-    "shrinkwrap": "0.1.x",
+    "shrinkwrap": "0.2.x",
     "argh": "0.1.x",
     "licenses": "0.0.x"
   }

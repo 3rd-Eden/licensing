@@ -73,7 +73,6 @@ function next(err, dependencies, dependend) {
     return process.exit(1);
   }
 
-
   console.log('Licenses information:');
   console.log('');
 
@@ -84,10 +83,11 @@ function next(err, dependencies, dependend) {
     var pkg = dependend[key]
       , padding = (new Array(50)).join(' ').slice(key.length);
 
+    console.log(dependend[key].licenses);
     console.log(key + padding +': '+ (
       dependend[key].licenses
       ?  dependend[key].licenses.join(', ')
-      : ''
+      : 'No license detected'
     ));
   });
 
