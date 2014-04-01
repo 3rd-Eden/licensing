@@ -20,7 +20,7 @@ if (!fs.existsSync(argh.package) && !argh.name || argh.help) {
   console.log('  --package [dir]    : The location of the package.json to use');
   console.log('  --registry [url]   : The registry we should use to resolve packages');
   console.log('  --name [name]      : Discover the footprint of a module instead');
-  console.log('  --production       : Do not include devDependencies');
+  console.log('  --devDependencies  : Also include all devDependencies');
   console.log('  --help             : Display this message');
   console.log('');
   console.log('example:');
@@ -34,7 +34,7 @@ if (!fs.existsSync(argh.package) && !argh.name || argh.help) {
 //
 var shrinkwrap = new Shrinkwrap({
   registry: argh.registry,
-  production: !!argh.production
+  production: !argh.devDependencies
 });
 
 console.log('');
@@ -61,9 +61,11 @@ if (argh.name) licenses(argh.name, function (err, licenses) {
 /**
  * Output the results.
  *
- * @param {Error}
+ * @param {Error} err A critical error has occured, we couldn't continue
+ * @param {Object} dependend all the sub dependencies.
+ * @api private
  */
-function next(err, dependencies, dependend) {
+function next(err, dependend) {
   if (err) {
     console.log('Failed to correctly resolve the licensing information');
     console.log('Received the following error:');
@@ -73,13 +75,17 @@ function next(err, dependencies, dependend) {
     return process.exit(1);
   }
 
-  console.log('Licenses information:');
-  console.log('');
+  var keys = Object.keys(dependend);
+
+  if (keys.length) {
+    console.log('Licenses information:');
+    console.log('');
+  }
 
   //
   // Output licensing information.
   //
-  Object.keys(dependend).forEach(function each(key) {
+  keys.forEach(function each(key) {
     var pkg = dependend[key]
       , padding = (new Array(50)).join(' ').slice(key.length);
 
