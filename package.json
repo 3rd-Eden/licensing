@@ -1,6 +1,6 @@
 {
   "name": "licensing",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Discover the license footprint of your application",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/3rd-Eden/licensing",
   "dependencies": {
-    "shrinkwrap": "0.2.x",
+    "shrinkwrap": "0.3.x",
     "argh": "0.1.x",
     "licenses": "0.0.x"
   }
