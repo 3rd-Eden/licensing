@@ -26,7 +26,7 @@ example:
 
 ## Debugging
 
-The module and it's submodules that make this license parsing possible are
+The module and its submodules that make this license parsing possible are
 instrumented with the `debug` logging module. If something doesn't work as expected
 you can see some useful output by prefixing the `licensing` command with the
 `DEBUG` env variable:
@@ -38,7 +38,7 @@ DEBUG=* licensing
 ## Github API ratelimit
 
 The module where this CLI application is build upon makes heavy use of Github and
-it's API for resolving licenses. The GitHub API is rate limited to only `60`
+its API for resolving licenses. The GitHub API is rate limited to only `60`
 requests per hour. Which isn't enough for bigger projects that have a lot of
 dependencies or if you want to resolve devDependencies. In order to go around this
 limitation you can supply a `GITHUB_TOKEN` env variable which contains a personal
@@ -83,7 +83,7 @@ have a valid license? Please report this at:
 https://github.com/3rd-Eden/licenses/issues/new
 
 Which is the library that does the actual parsing and detection of
-the license so we can improve it's parsing algorithm and yield
+the license so we can improve its parsing algorithm and yield
 better results.
 
 ```
@@ -149,7 +149,7 @@ have a valid license? Please report this at:
 https://github.com/3rd-Eden/licenses/issues/new
 
 Which is the library that does the actual parsing and detection of
-the license so we can improve it's parsing algorithm and yield
+the license so we can improve its parsing algorithm and yield
 better results.
 
 ```
